@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özür Dilerim</title>
+    <title>affet beni ceren özürr dilerimm</title>
     <style>
         body {
             margin: 0;
@@ -15,34 +15,72 @@
             background-color: #ffffff;
             overflow: hidden;
         }
-        .text-link {
-            font-size: 1.5rem;
-            color: #000000;
-            cursor: pointer;
-            user-select: none;
-            /* Sürekli hareket etmesini sağlayan animasyon */
-            animation: hareketEt 3s ease-in-out infinite; 
+        .box {
+            text-align: center;
         }
-        
-        /* Sağa-sola ve yukarı-aşağı yumuşak hareket animasyonu */
-        @keyframes hareketEt {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(15px, -10px); }
-            50% { transform: translate(-10px, 15px); }
-            75% { transform: translate(-15px, -5px); }
-            100% { transform: translate(0, 0); }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            margin: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        #hayirBtn {
+            position: absolute;
+            transition: all 0.1s ease;
         }
     </style>
 </head>
 <body>
 
-    <div class="text-link" id="yazi" onclick="degistir()">
-        Özür dilerim, kabul ediyor musun?
+   
+    <button id="baslaBtn" onclick="baslat()">cat boy</button>
+
+    
+    <div id="icerik" class="hidden box">
+        <h1 id="mesaj">beni afffettttt</h1>
+        <div id="butonlar">
+            <button id="evetBtn" onclick="evetTıklandı()">Evettttttt</button>
+            <button id="hayirBtn" onmouseover="kac()" onclick="kac()" ontouchstart="kac()">Hayır</button>
+        </div>
     </div>
 
     <script>
-        function degistir() {
-            document.getElementById("yazi").innerText = "Teşekkürler";
+        function baslat() {
+         
+            document.getElementById("baslaBtn").style.display = "none";
+            document.getElementById("icerik").classList.remove("hidden");
+            
+        
+            const hayir = document.getElementById("hayirBtn");
+            hayir.style.position = "static";
+        }
+
+        function kac() {
+            const hayir = document.getElementById("hayirBtn");
+            hayir.style.position = "absolute";
+            
+          
+            const x = Math.random() * (window.innerWidth - hayir.offsetWidth);
+            const y = Math.random() * (window.innerHeight - hayir.offsetHeight);
+            
+            hayir.style.left = x + "px";
+            hayir.style.top = y + "px";
+        }
+
+        function evetTıklandı() {
+            document.getElementById("butonlar").style.display = "none";
+            document.getElementById("mesaj").innerText = "çooooook teşekkür edderim cat boy minnettar";
         }
     </script>
 
